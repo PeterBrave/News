@@ -1,1 +1,4 @@
-<view class = 'title'>Hello World!</view>
+<view class='title'>
+  <image class='title-image' src='/images/news-title.png'></image>
+  <view class='title-text'>快读·资讯</view>
+</view>
