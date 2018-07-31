@@ -2,3 +2,13 @@
   <image class='title-image' src='/images/news-title.png'></image>
   <view class='title-text'>快读·资讯</view>
 </view>
+
+<ul class='menu-list'>
+  <li class="{{_num == 1?'chossing-meun-item':'menu-item'}}" data-num = "1" bindtap="clickNum">国内</li>
+  <li class="{{_num == 2?'chossing-meun-item':'menu-item'}}" data-num = "2" bindtap="clickNum">国际</li>
+  <li class="{{_num == 3?'chossing-meun-item':'menu-item'}}" data-num = "3" bindtap="clickNum">财经</li>
+  <li class="{{_num == 4?'chossing-meun-item':'menu-item'}}" data-num = "4" bindtap="clickNum">娱乐</li>
+  <li class="{{_num == 5?'chossing-meun-item':'menu-item'}}" data-num = "5" bindtap="clickNum">军事</li>
+  <li class="{{_num == 6?'chossing-meun-item':'menu-item'}}" data-num = "6" bindtap="clickNum">体育</li>
+  <li class="{{_num == 7?'chossing-meun-item':'menu-item'}}" data-num = "7" bindtap="clickNum">其他</li>
+</ul>
