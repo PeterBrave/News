@@ -12,3 +12,26 @@
   <li class="{{_num == 6?'chossing-meun-item':'menu-item'}}" data-num = "6" bindtap="clickNum">体育</li>
   <li class="{{_num == 7?'chossing-meun-item':'menu-item'}}" data-num = "7" bindtap="clickNum">其他</li>
 </ul>
+
+<image class='hot-card-background' src='{{newsList[0].firstImage}}' mode='widthFix'></image>
+<view class='hot-card'>
+  <image class='hot-card-hot-icon' src='/images/hot.png' mode='widthFix'></image>
+  <image class='hot-card-image' src='{{newsList[0].firstImage}}' mode='scaleToFill'></image>
+  <view class='hot-news-title'>{{newsList[0].title}}</view>
+  <view class='hot-news-sources'>{{newsList[0].source === ''?'未知来源':newsList[0].source}}</view>
+  <view class='hot-news-date'>{{newsList[0].date}}</view>
+</view>
+
+<view class='news-list' wx:for='{{newsList}}' wx:for-index="idx" wx:for-item="itemName" wx:if='{{idx!=0}}'>
+  <view class='news-list-info'>
+    <view class='news-list-info-title'>{{itemName.title}}</view>
+    <view class='news-list-info-buttom'>
+      <view class='news-list-info-source'>{{itemName.source === ''?'未知来源':itemName.source}}</view>
+      <view class='news-list-info-date'>{{itemName.date}}</view>
+    </view>
+  </view>
+  <view class='news-list-image-content'>
+    <image class='news-list-image' src='{{itemName.firstImage}}' mode='aspectFit'></image>
+  </view>
+</view>
+
