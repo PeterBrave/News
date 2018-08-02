@@ -18,9 +18,12 @@
   <view class='hot-card'>
     <image class='hot-card-hot-icon' src='/images/hot.png' mode='widthFix'></image>
     <image class='hot-card-image' src='{{newsList[0].firstImage}}' mode='scaleToFill'></image>
+    <view class='hot-news-text-bg'></view>
     <view class='hot-news-title'>{{newsList[0].title}}</view>
-    <view class='hot-news-sources'>{{newsList[0].source === ''?'未知来源':newsList[0].source}}</view>
-    <view class='hot-news-date'>{{newsList[0].date}}</view>
+    <view class='hot-news-bottom'>
+      <view class='hot-news-sources'>{{newsList[0].source === ''?'未知来源':newsList[0].source}}</view>
+      <view class='hot-news-date'>{{newsList[0].date}}</view>
+    </view>
   </view>
 </view>
 
