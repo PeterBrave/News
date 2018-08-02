@@ -1,10 +1,13 @@
 .title {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   width: 100%;
   height: 140rpx;
   text-align: center;
   background-color: #65A1E2;
-  z-index: -1;
+  z-index: 99;
 }
 .title-image {
   margin-top: 60rpx; 
@@ -22,20 +25,38 @@
   color: #fff;
 }
 .menu-list {
-  display: flex;
-  overflow: hidden;
   width: 100%;
   height: 64rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 64rpx;
   background-color: #65A1E2;
+  white-space: nowrap;
+  position: fixed;
+  top: 140rpx;
+  left: 0;
+  z-index: 99;
 }
-.menu-item {
-  margin-left: 12rpx;
-  margin-bottom: 20rpx;
-  text-align: center;
-  width: 14%;
-  font-size: 28rpx;
-  line-height: 40rpx;
+.meun-item {
+  margin: 0 20rpx;
+  display: inline-block;
   color: #D9E8F6;
+  font-size: 32rpx;
+}
+.meun-item.active {
+  color: #fff;
+  position: relative;
+}
+.meun-item.active:after {
+  content: "";
+  display: block;
+  height: 4rpx;
+  width: 52rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: 4rpx;
+  left: 5rpx;
+  border-radius: 16rpx;
 }
 .chossing-meun-item {
   margin-left: 12rpx;
@@ -173,5 +194,10 @@
   transform: translate(-50%, -50%);
   border-radius: 6rpx;
 }
-
+.tab-content {
+  margin-top: 204rpx;
+}
+.scoll-h {
+  height: 100%;
+}
 

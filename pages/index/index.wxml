@@ -3,40 +3,45 @@
   <view class='title-text'>快读·资讯</view>
 </view>
 
-<ul class='menu-list'>
-  <li class="{{_num == 1?'chossing-meun-item':'menu-item'}}" data-num = "1" bindtap="clickNum">国内</li>
-  <li class="{{_num == 2?'chossing-meun-item':'menu-item'}}" data-num = "2" bindtap="clickNum">国际</li>
-  <li class="{{_num == 3?'chossing-meun-item':'menu-item'}}" data-num = "3" bindtap="clickNum">财经</li>
-  <li class="{{_num == 4?'chossing-meun-item':'menu-item'}}" data-num = "4" bindtap="clickNum">娱乐</li>
-  <li class="{{_num == 5?'chossing-meun-item':'menu-item'}}" data-num = "5" bindtap="clickNum">军事</li>
-  <li class="{{_num == 6?'chossing-meun-item':'menu-item'}}" data-num = "6" bindtap="clickNum">体育</li>
-  <li class="{{_num == 7?'chossing-meun-item':'menu-item'}}" data-num = "7" bindtap="clickNum">其他</li>
-</ul>
+<scroll-view scroll-x='true' class='menu-list' scroll-left="{{scrollLeft}}">
+  <view class="meun-item {{currentTab == 0?'active':''}}" data-current = "0" bindtap="switchNav">国内</view>
+  <view class="meun-item {{currentTab == 1?'active':''}}" data-current = "1" bindtap="switchNav">国际</view>
+  <view class="meun-item {{currentTab == 2?'active':''}}" data-current = "2" bindtap="switchNav">财经</view>
+  <view class="meun-item {{currentTab == 3?'active':''}}" data-current = "3" bindtap="switchNav">娱乐</view>
+  <view class="meun-item {{currentTab == 4?'active':''}}" data-current = "4" bindtap="switchNav">军事</view>
+  <view class="meun-item {{currentTab == 5?'active':''}}" data-current = "5" bindtap="switchNav">体育</view>
+  <view class="meun-item {{currentTab == 6?'active':''}}" data-current = "6" bindtap="switchNav">其他</view>
+</scroll-view>
 
-<view class='hot-area'>
-  <image class='hot-card-background' src='{{newsList[0].firstImage}}' mode='scaleToFill'></image>
-  <view class='hot-card'>
-    <image class='hot-card-hot-icon' src='/images/hot.png' mode='widthFix'></image>
-    <image class='hot-card-image' src='{{newsList[0].firstImage}}' mode='scaleToFill'></image>
-    <view class='hot-news-text-bg'></view>
-    <view class='hot-news-title'>{{newsList[0].title}}</view>
-    <view class='hot-news-bottom'>
-      <view class='hot-news-sources'>{{newsList[0].source === ''?'未知来源':newsList[0].source}}</view>
-      <view class='hot-news-date'>{{newsList[0].date}}</view>
-    </view>
-  </view>
-</view>
+<swiper class='tab-content' current='{{currentTab}}' duration='500' bindchange='switchTab' style='height:{{winHeight}}rpx'>
+  <swiper-item wx:for='{{[0,1,2,3,4,5,6]}}'>
+    <scroll-view scroll-y='true' class='scoll-h'>
+      <view class='hot-area'>
+        <image class='hot-card-background' src='{{newsList[0].firstImage}}' mode='scaleToFill'></image>
+        <view class='hot-card'>
+          <image class='hot-card-hot-icon' src='/images/hot.png' mode='widthFix'></image>
+          <image class='hot-card-image' src='{{newsList[0].firstImage}}' mode='scaleToFill'></image>
+          <view class='hot-news-text-bg'></view>
+          <view class='hot-news-title'>{{newsList[0].title}}</view>
+          <view class='hot-news-bottom'>
+            <view class='hot-news-sources'>{{newsList[0].source === ''?'未知来源':newsList[0].source}}</view>
+            <view class='hot-news-date'>{{newsList[0].date}}</view>
+          </view>
+        </view>
+      </view>
 
-<view class='news-list' wx:for='{{newsList}}' wx:for-index="idx" wx:for-item="itemName" wx:if='{{idx!=0}}'>
-  <view class='news-list-info'>
-    <view class='news-list-info-title'>{{itemName.title}}</view>
-    <view class='news-list-info-buttom'>
-      <view class='news-list-info-source'>{{itemName.source === ''?'未知来源':itemName.source}}</view>
-      <view class='news-list-info-date'>{{itemName.date}}</view>
-    </view>
-  </view>
-  <view class='news-list-image-content'>
-    <image class='news-list-image' src='{{itemName.firstImage}}' mode='aspectFit'></image>
-  </view>
-</view>
-
+      <view class='news-list' wx:for='{{newsList}}' wx:for-index="idx" wx:for-item="itemName" wx:if='{{idx!=0}}'>
+        <view class='news-list-info'>
+          <view class='news-list-info-title'>{{itemName.title}}</view>
+          <view class='news-list-info-buttom'>
+            <view class='news-list-info-source'>{{itemName.source === ''?'未知来源':itemName.source}}</view>
+            <view class='news-list-info-date'>{{itemName.date}}</view>
+          </view>
+        </view>
+        <view class='news-list-image-content'>
+          <image class='news-list-image' src='{{itemName.firstImage}}' mode='aspectFit'></image>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

@@ -1,37 +1,62 @@
+const newsTagMap = ['gn','gj','cj','yl','js','ty','other']
+
 Page({
   data: {
-    _num: 0,
+    winHeight: '',
+    currentTab: 0,
+    scrollLeft: 0,
     newsList: [],
     newsTag: 'gn'
   },
-  clickNum: function (e) {
-    //console.log(e.target.dataset.num)
-    let num = e.target.dataset.num
-    let tag = ''
-    switch(num) {
-      case '1': tag = 'gn';
-      break;
-      case '2': tag = 'gj';
-      break;
-      case '3': tag = 'cj';
-      break;
-      case '4': tag = 'yl';
-      break;
-      case '5': tag = 'js';
-      break;
-      case '6': tag = 'ty';
-      break;
-      case '7': tag = 'other';
-      break;
-    }
+  switchTab: function (e) {
     this.setData({
-      _num: num,
-      newsTag: tag
-    })
-    this.getNews()
+      currentTab: e.detail.current,
+      newsTag: newsTagMap[e.detail.current]
+    });
+    this.checkCor();
+    this.getNews();
+    //console.log(newsTagMap[e.detail.current])
+  },
+  switchNav: function (e) {
+    //console.log(e.target.dataset.num)
+    //console.log(e.target.dataset.current)
+    let cur = e.target.dataset.current
+    if (this.data.currentTab == cur) { return false; }
+    else {
+      this.setData({
+        currentTab: cur,
+      })
+    }
+    
+  },
+  checkCor: function () {
+    if (this.data.currentTab > 4) {
+      this.setData({
+        scrollLeft: 300
+      })
+    } else {
+      this.setData({
+        scrollLeft: 0
+      })
+    }
   },
   onLoad: function () {
-      this.getNews()
+
+    var that = this;
+    //  高度自适应
+    wx.getSystemInfo({
+      success: function (res) {
+        var clientHeight = res.windowHeight,
+          clientWidth = res.windowWidth,
+          rpxR = 750 / clientWidth;
+        var calc = clientHeight * rpxR - 180;
+        console.log(calc)
+        that.setData({
+          winHeight: calc
+        });
+      }
+    });
+    this.getNews();
   },
   getNews() {
     wx.request({
