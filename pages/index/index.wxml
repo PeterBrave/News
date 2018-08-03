@@ -13,10 +13,10 @@
   <view class="meun-item {{currentTab == 6?'active':''}}" data-current = "6" bindtap="switchNav">其他</view>
 </scroll-view>
 
-<swiper class='tab-content' current='{{currentTab}}' duration='500' bindchange='switchTab' style='height:{{winHeight}}rpx'>
+<swiper class='tab-content' current='{{currentTab}}' duration='300' bindchange='switchTab' style='height:{{winHeight}}rpx'>
   <swiper-item wx:for='{{[0,1,2,3,4,5,6]}}'>
     <scroll-view scroll-y='true' class='scoll-h'>
-      <view class='hot-area'>
+      <view class='hot-area' bindtap='onTapHotNewsDetail'>
         <image class='hot-card-background' src='{{newsList[0].firstImage}}' mode='scaleToFill'></image>
         <view class='hot-card'>
           <image class='hot-card-hot-icon' src='/images/hot.png' mode='widthFix'></image>
@@ -30,7 +30,7 @@
         </view>
       </view>
 
-      <view class='news-list' wx:for='{{newsList}}' wx:for-index="idx" wx:for-item="itemName" wx:if='{{idx!=0}}'>
+      <view class='news-list' wx:for='{{newsList}}'  data-index='{{index}}' wx:for-item="itemName" wx:if='{{index!=0}}'bindtap='onTapNewsDetail'>
         <view class='news-list-info'>
           <view class='news-list-info-title'>{{itemName.title}}</view>
           <view class='news-list-info-buttom'>

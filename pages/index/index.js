@@ -40,6 +40,24 @@ Page({
       })
     }
   },
+  onTapNewsDetail: function(e) {
+    let newsListIndex = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '/pages/list/list?id=' + this.data.newsList[newsListIndex].id
+    })
+    //console.log(e.currentTarget.dataset.index)
+  },
+  onTapHotNewsDetail: function (e) {
+    wx.navigateTo({
+      url: '/pages/list/list?id=' + this.data.newsList[0].id
+    })
+    //console.log(e.currentTarget.dataset.index)
+  },
+  onPullDownRefresh() {
+    this.getNews(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
   onLoad: function () {
 
     var that = this;
@@ -58,7 +76,7 @@ Page({
     });
     this.getNews();
   },
-  getNews() {
+  getNews(callback) {
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       data: {
@@ -77,6 +95,9 @@ Page({
         this.setData({
           newsList: result
         })
+      },
+      complete: () => {
+        callback && callback()
       }
     })
   }

@@ -1,10 +1,12 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/list/list"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarTextStyle":"black",
-    "navigationStyle": "custom"
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true
   }
 }

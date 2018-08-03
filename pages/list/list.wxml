@@ -1,0 +1,23 @@
+<view class='title'>
+  <image class='title-image' src='/images/arrow.png' bindtap='navBack'></image>
+  <view class='title-text'>快读·资讯</view>
+</view>
+
+<view class='news-detail'>
+  <view class='news-detail-title'>{{newsDetail.title}}</view>
+  <view class='news-detail-info'>
+    <view class='news-detail-source'>{{newsDetail.source === ''?'未知来源':newsDetail.source}}</view>
+    <view class='news-detail-date'>{{newsDetail.date}}</view>
+    <view class='news-detail-readCount'>阅读 {{newsDetail.readCount}}</view>
+  </view>
+
+  <view class='news-detail-content'  wx:for='{{newsDetail.content}}' wx:for-index="idx" wx:for-item="itemName">
+    <view class='news-detail-content-strong' wx:if='{{itemName.type == "strong"}}'>{{itemName.text}}</view>
+    <image class='news-detail-content-img' wx:if='{{itemName.type == "image"}}' src='{{itemName.src}}' mode='widthFix'></image>
+    <view class='news-detail-content-p' wx:if='{{itemName.type == "p"}}'>{{itemName.text}}</view>
+  </view>
+</view>
+
+
+
+
