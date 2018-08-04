@@ -1,4 +1,5 @@
 const newsTagMap = ['gn','gj','cj','yl','js','ty','other']
+const newsTagCN = ['国内','国际','财经','娱乐','军事','体育','其他']
 Page({
   data: {
     winHeight: '',
@@ -26,7 +27,6 @@ Page({
         currentTab: cur,
       })
     }
-    
   },
   checkCor: function () {
     if (this.data.currentTab > 4) {
@@ -60,7 +60,6 @@ Page({
     console.log('pullDown')
   },
   onLoad: function () {
-
     var that = this;
     //  高度自适应
     wx.getSystemInfo({
@@ -102,6 +101,4 @@ Page({
       }
     })
   }
-
-
 })

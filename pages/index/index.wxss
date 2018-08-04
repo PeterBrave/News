@@ -32,7 +32,7 @@
   left: 5rpx;
   border-radius: 16rpx;
 }
-.chossing-meun-item {
+/* .chossing-meun-item {
   margin-left: 12rpx;
   margin-bottom: 20rpx;
   text-align: center;
@@ -41,7 +41,7 @@
   line-height: 40rpx;
   color: #fff;
   border-bottom: 4rpx solid #fff;
-}
+} */
 .hot-area {
   position: relative;
   width: 100%;

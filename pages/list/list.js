@@ -1,5 +1,4 @@
 Page({
-
   data: {
     newsId: '1523074607642',
     newsDetail: []
