@@ -6,7 +6,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom",
-    "enablePullDownRefresh": true
+    "navigationStyle": "defalut",
+    "navigationBarTitleText": "快读·资讯"
   }
 }

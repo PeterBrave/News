@@ -1,5 +1,4 @@
 const newsTagMap = ['gn','gj','cj','yl','js','ty','other']
-
 Page({
   data: {
     winHeight: '',
@@ -54,9 +53,11 @@ Page({
     //console.log(e.currentTarget.dataset.index)
   },
   onPullDownRefresh() {
+    //wx.showNavigationBarLoading()
     this.getNews(() => {
       wx.stopPullDownRefresh()
-    })
+    }),
+    console.log('pullDown')
   },
   onLoad: function () {
 
@@ -67,7 +68,7 @@ Page({
         var clientHeight = res.windowHeight,
           clientWidth = res.windowWidth,
           rpxR = 750 / clientWidth;
-        var calc = clientHeight * rpxR - 180;
+        var calc = clientHeight * rpxR - 64;
         console.log(calc)
         that.setData({
           winHeight: calc
@@ -91,7 +92,7 @@ Page({
           let minutes = b.getUTCMinutes().toString().padStart(2, '0')
           result[i].date = `${hour}:${minutes}`
         }
-        //console.log(result)
+        console.log(result)
         this.setData({
           newsList: result
         })

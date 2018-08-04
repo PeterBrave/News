@@ -1,8 +1,4 @@
-<view class='title'>
-  <image class='title-image' src='/images/arrow.png' bindtap='navBack'></image>
-  <view class='title-text'>快读·资讯</view>
-</view>
-
+<view class='separate-line'></view>
 <view class='news-detail'>
   <view class='news-detail-title'>{{newsDetail.title}}</view>
   <view class='news-detail-info'>

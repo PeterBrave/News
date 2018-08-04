@@ -1,8 +1,3 @@
-<view class='title'>
-  <image class='title-image' src='/images/news-title.png'></image>
-  <view class='title-text'>快读·资讯</view>
-</view>
-
 <scroll-view scroll-x='true' class='menu-list' scroll-left="{{scrollLeft}}">
   <view class="meun-item {{currentTab == 0?'active':''}}" data-current = "0" bindtap="switchNav">国内</view>
   <view class="meun-item {{currentTab == 1?'active':''}}" data-current = "1" bindtap="switchNav">国际</view>

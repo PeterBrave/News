@@ -1,29 +1,3 @@
-.title {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  height: 140rpx;
-  text-align: center;
-  background-color: #65A1E2;
-  z-index: 99;
-}
-.title-image {
-  margin-top: 60rpx; 
-  margin-left: 30rpx;
-  width: 48rpx;
-  height: 48rpx;
-  border-radius: 50%;
-  background-color: #fff;
-}
-.title-text {
-  margin-top: 60rpx; 
-  margin-left: 15rpx;
-  font-size: 32rpx;
-  line-height: 45rpx;
-  color: #fff;
-}
 .menu-list {
   width: 100%;
   height: 64rpx;
@@ -32,8 +6,8 @@
   line-height: 64rpx;
   background-color: #65A1E2;
   white-space: nowrap;
-  position: fixed;
-  top: 140rpx;
+  position: relative;
+  top: 0;
   left: 0;
   z-index: 99;
 }
@@ -195,7 +169,7 @@
   border-radius: 6rpx;
 }
 .tab-content {
-  margin-top: 204rpx;
+  margin-top: 0;
 }
 .scoll-h {
   height: 100%;
