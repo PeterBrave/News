@@ -1,11 +1,7 @@
 <scroll-view scroll-x='true' class='menu-list' scroll-left="{{scrollLeft}}">
-  <view class="meun-item {{currentTab == 0?'active':''}}" data-current = "0" bindtap="switchNav">国内</view>
-  <view class="meun-item {{currentTab == 1?'active':''}}" data-current = "1" bindtap="switchNav">国际</view>
-  <view class="meun-item {{currentTab == 2?'active':''}}" data-current = "2" bindtap="switchNav">财经</view>
-  <view class="meun-item {{currentTab == 3?'active':''}}" data-current = "3" bindtap="switchNav">娱乐</view>
-  <view class="meun-item {{currentTab == 4?'active':''}}" data-current = "4" bindtap="switchNav">军事</view>
-  <view class="meun-item {{currentTab == 5?'active':''}}" data-current = "5" bindtap="switchNav">体育</view>
-  <view class="meun-item {{currentTab == 6?'active':''}}" data-current = "6" bindtap="switchNav">其他</view>
+  <view class='menu-list-content' wx:for="{{newsTagCN}}" wx:for-index="idx" wx:for-item="itemName">
+    <view class="meun-item {{currentTab == idx?'active':''}}" data-current = "{{idx}}" bindtap="switchNav">{{itemName}}</view>
+  </view>
 </scroll-view>
 
 <swiper class='tab-content' current='{{currentTab}}' duration='300' bindchange='switchTab' style='height:{{winHeight}}rpx'>

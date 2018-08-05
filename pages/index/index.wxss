@@ -10,6 +10,7 @@
   top: 0;
   left: 0;
   z-index: 99;
+  display: inline-block;
 }
 .meun-item {
   margin: 0 20rpx;
@@ -31,6 +32,9 @@
   bottom: 4rpx;
   left: 5rpx;
   border-radius: 16rpx;
+}
+.menu-list-content {
+  float: left;
 }
 /* .chossing-meun-item {
   margin-left: 12rpx;
