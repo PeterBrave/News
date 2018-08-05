@@ -6,9 +6,7 @@
   line-height: 64rpx;
   background-color: #65A1E2;
   white-space: nowrap;
-  position: relative;
-  top: 0;
-  left: 0;
+  position: fixed;
   z-index: 99;
   display: inline-block;
 }
@@ -36,16 +34,6 @@
 .menu-list-content {
   float: left;
 }
-/* .chossing-meun-item {
-  margin-left: 12rpx;
-  margin-bottom: 20rpx;
-  text-align: center;
-  width: 14%;
-  font-size: 28rpx;
-  line-height: 40rpx;
-  color: #fff;
-  border-bottom: 4rpx solid #fff;
-} */
 .hot-area {
   position: relative;
   width: 100%;
@@ -173,9 +161,12 @@
   border-radius: 6rpx;
 }
 .tab-content {
-  margin-top: 0;
+  position: relative;
+  margin-top: 0rpx;
+  height: 100%;
 }
 .scoll-h {
-  height: 100%;
+  position: relative;
+  margin-top: 64rpx;
 }
 
